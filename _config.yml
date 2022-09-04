@@ -29,7 +29,7 @@ description: >-                        # used by seo meta and the atom feed
   Desarrollador de Software .Net, Software Developer .Net, Desarrollador c#, Programador, Senior, Azure
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ''
+url: 'https://Dev-Ron.github.io'
 
 github:
   username: Dev-Ron             # change to your github username
@@ -49,11 +49,6 @@ social:
   name: Ronal Mauricio Gelvez Ruiz
   email: rmgelvez@hotmail.com             # change to your email address
   links:
-    # The first element serves as the copyright owner's link
-    - https://twitter.com/rmgelvez     # change to your twitter homepage
-    - https://github.com/Dev-Ron      # change to your github homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
     - https://www.linkedin.com/in/rmgelvez
 
 google_site_verification:               # fill in to your verification string
@@ -116,10 +111,10 @@ comments:
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
   self_host:
-    enabled:      # boolean, keep empty means false
+    enabled: true     # boolean, keep empty means false
     # specify the Jekyll environment, empty means both
     # only works if `assets.self_host.enabled` is 'true'
-    env:          # [development|production]
+    env: development         # [development|production]
 
 pwa:
   enabled: true   # the option for PWA feature

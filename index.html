@@ -1,14 +1,11 @@
 ---
-layout: home
-# Index page
+layout: page
 ---
 
-
-<link href="http://fonts.cdnfonts.com/css/anita-jane" rel="stylesheet">
-
-<style>
-    .site-title a {
-    font-family: 'Anita Jane';
-    font-size: xx-large;
-}
-</style>
+<ul>
+    {% for post in site.posts %}
+        {% if post.title == "About Me" %}
+            <p>{{ post.content | markdownify }}</p>
+        {% endif %}
+    {% endfor %}
+</ul>
