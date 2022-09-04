@@ -12,7 +12,7 @@ cdns:
 # fonts
 
 webfonts: https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap
-webfonts: http://fonts.cdnfonts.com/css/anita-jane
+webfonts: https://fonts.cdnfonts.com/css/anita-jane
 # Libraries
 
 jquery:
