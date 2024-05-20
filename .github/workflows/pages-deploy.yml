@@ -22,8 +22,10 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2
+          bundler: Gemfile.lock
           bundler-cache: true
+          ruby-version: default
+          working-directory: .
 
       - name: Deploy
         run: bash tools/deploy.sh
