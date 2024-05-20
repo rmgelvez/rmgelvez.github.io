@@ -21,12 +21,12 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Ronal Gelvez                          # the main title
+title: Ronal Gelvez | Software Developer # the main title
 
-tagline: Software Developer   # it will display as the sub-title
+tagline: Software Developer .Net - Azure # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Desarrollador de Software .Net, Software Developer .Net, Desarrollador c#, Programador, Senior, Azure
+  Welcome to the portfolio of Ronal Gelvez, an experienced .NET Developer specializing in Azure cloud solutions. Explore my projects, showcasing expertise in creating scalable, secure, and high-performance applications. With a deep understanding of .NET technologies and Azure services, I bring innovative solutions to complex problems. Let's collaborate to bring your ideas to life in the cloud. 
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://rmgelvez.com/'
@@ -49,9 +49,12 @@ social:
   name: Ronal Mauricio Gelvez Ruiz
   email: rmgelvez@hotmail.com             # change to your email address
   links:
+    - https://x.com/rmgelvez
     - https://www.linkedin.com/in/rmgelvez
+    - https://github.com/rmgelvez
+    - https://www.instagram.com/rmgelvez/
 
-google_site_verification:               # fill in to your verification string
+google_site_verification: z0x-mSWwI-3ljC-9ur2ZgdqljSwObkApKoGx5U-pUaE # fill in to your verification string
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
@@ -90,7 +93,7 @@ avatar: https://s.gravatar.com/avatar/e294987c5278d85a4c6421bca8467f05?s=80
 toc: true
 
 comments:
-  active: 'disqus'     # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
+  active: 'giscus'     # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
   # The active options are as follows:
   disqus:
     shortname:    # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
@@ -100,13 +103,16 @@ comments:
     issue_term:   # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo:             # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
-    mapping:          # optional, default to 'pathname'
-    input_position:   # optional, default to 'bottom'
-    lang:             # optional, default to the value of `site.lang`
+    repo:                "rmgelvez/Discussions"
+    repo-id:             "R_kgDOL9z3LA"
+    category:            "General"
+    category-id:         "DIC_kwDOL9z3LM4CfeTQ"
+    mapping:             "pathname"
+    reaction-enabled:    "1"
+    theme:               "dark_dimmed"
+    crossorigin:         "anonymous"
+    input_position: bottom   # optional, default to 'bottom'
+    lang: es
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
