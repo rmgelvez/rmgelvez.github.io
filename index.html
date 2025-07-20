@@ -1,11 +1,4 @@
 ---
-layout: page
+layout: home
+# Index page
 ---
-
-<ul>
-    {% for post in site.posts %}
-        {% if post.title == "About Me" %}
-            <p>{{ post.content | markdownify }}</p>
-        {% endif %}
-    {% endfor %}
-</ul>
