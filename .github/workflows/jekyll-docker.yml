@@ -1,11 +1,11 @@
-name: Build Jekyll site
+name: Build and Deploy Jekyll Site
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,11 +18,15 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
-      - name: Add safe git directory
-        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
-
       - name: Install dependencies
         run: bundle install
 
       - name: Build the site
         run: bundle exec jekyll build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+
