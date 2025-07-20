@@ -27,6 +27,9 @@ jobs:
       - name: Add .nojekyll to _site
         run: touch _site/.nojekyll
 
+      - name: Copy CNAME into _site
+        run: cp CNAME _site/CNAME
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
