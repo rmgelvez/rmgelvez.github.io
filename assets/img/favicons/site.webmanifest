@@ -1,1 +1,23 @@
-{ "name": "Ronal Gelvez | Software Developer", "short_name": "Ronal Gelvez | Software Developer", "description": "Welcome to the portfolio of Ronal Gelvez, an experienced .NET Developer specializing in Azure cloud solutions. Explore my projects, showcasing expertise in creating scalable, secure, and high-performance applications. With a deep understanding of .NET technologies and Azure services, I bring innovative solutions to complex problems. Let's collaborate to bring your ideas to life in the cloud. ", "icons": [ { "src": "/assets/img/favicons/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" }, { "src": "/assets/img/favicons/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }], "start_url": "/index.html", "theme_color": "#2a1e6b", "background_color": "#ffffff", "display": "fullscreen" }
+
+
+{
+  "name": "Ronal Gelvez",
+  "short_name": "Ronal Gelvez",
+  "description": "Welcome to the portfolio of Ronal Gelvez, an experienced .NET Developer specializing in Azure cloud solutions. Explore my projects, showcasing expertise in creating scalable, secure, and high-performance applications. With a deep understanding of .NET technologies and Azure services, I bring innovative solutions to complex problems. Let's collaborate to bring your ideas to life in the cloud.",
+  "icons": [
+    {
+      "src": "/assets/img/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
+  "start_url": "/index.html",
+  "theme_color": "#2a1e6b",
+  "background_color": "#ffffff",
+  "display": "fullscreen"
+}
+
