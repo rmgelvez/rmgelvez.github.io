@@ -17,8 +17,10 @@ interface Translations {
 export class I18nService {
   private readonly locale = inject(LOCALE_ID);
   
+  private static readonly supportedLanguages: Language[] = ['en', 'es'];
+
   private readonly currentLanguage = signal<Language>(
-    (localStorage.getItem('language') as Language) || 'en'
+    this.getInitialLanguage()
   );
 
   private readonly translations: Record<Language, Translations> = {
@@ -66,5 +68,13 @@ export class I18nService {
     }
 
     return typeof translation === 'string' ? translation : (defaultValue || key);
+  }
+
+  private getInitialLanguage(): Language {
+    const saved = localStorage.getItem('language');
+    if (saved && I18nService.supportedLanguages.includes(saved as Language)) {
+      return saved as Language;
+    }
+    return 'en';
   }
 }

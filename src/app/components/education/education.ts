@@ -3,6 +3,7 @@ import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-education',
+  standalone: true,
   templateUrl: './education.html',
   styleUrl: './education.scss'
 })

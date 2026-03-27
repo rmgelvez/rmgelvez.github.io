@@ -3,6 +3,7 @@ import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-experience',
+  standalone: true,
   templateUrl: './experience.html',
   styleUrl: './experience.scss'
 })

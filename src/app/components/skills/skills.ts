@@ -3,6 +3,7 @@ import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-skills',
+  standalone: true,
   templateUrl: './skills.html',
   styleUrl: './skills.scss'
 })

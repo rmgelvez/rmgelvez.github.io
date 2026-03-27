@@ -3,6 +3,7 @@ import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-hero',
+  standalone: true,
   templateUrl: './hero.html',
   styleUrl: './hero.scss'
 })
