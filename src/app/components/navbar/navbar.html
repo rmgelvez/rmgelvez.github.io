@@ -1,17 +1,17 @@
 <nav class="navbar">
   <div class="navbar__container">
     <a class="navbar__logo" (click)="scrollTo('hero')">
-      <svg viewBox="0 0 80 50" class="navbar__logo-svg" aria-label="RG">
-        <text x="40" y="36" text-anchor="middle" class="navbar__logo-text">Ronal Gelvez</text>
+      <svg viewBox="0 0 280 50" class="navbar__logo-svg" aria-label="RG">
+        <text x="140" y="36" text-anchor="middle" class="navbar__logo-text">Ronal Gelvez</text>
       </svg>
     </a>
 
     <ul class="navbar__links" [class.open]="menuOpen()">
-      @for (section of sections; track section.id) {
+      @for (section of sections(); track section.id) {
         @if (section.route) {
           <li>
             <a
-              class="navbar__link"
+              class="navbar__link navbar__link--route"
               [routerLink]="section.route"
               routerLinkActive="active"
               (click)="menuOpen.set(false)"

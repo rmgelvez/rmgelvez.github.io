@@ -1,0 +1,22 @@
+<div class="projects-container">
+  <div class="projects-header">
+    <h1>{{ i18n.t('projects.title') }}</h1>
+    <p class="subtitle">A selection of projects I've built and contributed to</p>
+  </div>
+
+  <div class="projects-grid">
+    <div *ngFor="let project of projects" class="project-card">
+      <div class="project-content">
+        <h2>{{ project.title }}</h2>
+        <p class="project-excerpt">{{ project.excerpt }}</p>
+        <a [routerLink]="['/projects', project.slug]" class="view-project">
+          {{ i18n.t('projects.viewProject') }} →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="projects.length === 0" class="empty-state">
+    <p>{{ i18n.t('projects.noProjectsYet') }}</p>
+  </div>
+</div>

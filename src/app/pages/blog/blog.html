@@ -1,0 +1,21 @@
+<div class="blog-container">
+  <div class="blog-header">
+    <h1>{{ i18n.t('blog.title') }}</h1>
+    <p class="subtitle">Thoughts, insights, and articles about web development</p>
+  </div>
+
+  <div class="posts-grid">
+    <article *ngFor="let post of posts" class="post-card">
+      <time *ngIf="post.date" class="post-date">{{ post.date }}</time>
+      <h2>{{ post.title }}</h2>
+      <p class="post-excerpt">{{ post.excerpt }}</p>
+      <a [routerLink]="['/blog', post.slug]" class="read-more">
+        {{ i18n.t('blog.readMore') }} →
+      </a>
+    </article>
+  </div>
+
+  <div *ngIf="posts.length === 0" class="empty-state">
+    <p>{{ i18n.t('blog.noPostsYet') }}</p>
+  </div>
+</div>

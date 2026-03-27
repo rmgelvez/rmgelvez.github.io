@@ -1,0 +1,27 @@
+<div class="content-detail">
+  <div class="content-detail__container">
+    <a class="content-detail__back" [routerLink]="backLink">
+      ← {{ backLabel }}
+    </a>
+
+    <ng-container *ngIf="item; else missingContent">
+      <header class="content-detail__header">
+        <p *ngIf="item.date" class="content-detail__meta">{{ item.date }}</p>
+        <h1>{{ item.title }}</h1>
+        <p class="content-detail__excerpt">{{ item.excerpt }}</p>
+      </header>
+
+      <article class="content-detail__article" [innerHTML]="item.html"></article>
+    </ng-container>
+
+    <ng-template #missingContent>
+      <section class="content-detail__empty">
+        <h1>{{ missingTitle }}</h1>
+        <p>{{ missingMessage }}</p>
+        <a class="content-detail__back content-detail__back--inline" [routerLink]="backLink">
+          ← {{ backLabel }}
+        </a>
+      </section>
+    </ng-template>
+  </div>
+</div>

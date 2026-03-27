@@ -11,6 +11,11 @@
   position: relative;
   overflow: visible;
 
+  @media (max-width: 767px) {
+    min-height: auto;
+    padding: 80px 1.5rem 2rem;
+  }
+
   &__container {
     @include container;
     display: flex;
@@ -68,7 +73,7 @@
   &__name {
     font-family: var(--font-hero);
     font-size: var(--fs-hero-name);
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.05em;
     line-height: 0.95;
     color: var(--text-primary);

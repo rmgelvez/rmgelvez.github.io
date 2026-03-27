@@ -1,8 +1,9 @@
 import { Profile } from '../models/profile.model';
 
 export const PROFILE_DATA: Profile = {
-  name: 'Ronal Mauricio Gelvez Ruiz',
+  name: 'Ronal Gelvez',
   role: 'Software Developer .NET - Azure',
+  about: 'I\'m passionate about technology and how it helps us solve problems. As a software developer, I continuously learn cutting-edge tools and techniques to improve productivity. My main goal is to generate and share knowledge.',
   avatarUrl: 'https://1.gravatar.com/userimage/176784774/ef2c6ad44cfcca2fa55d3919c35ff992?size=400',
   socialLinks: [
     {

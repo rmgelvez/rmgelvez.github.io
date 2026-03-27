@@ -1,6 +1,7 @@
 export interface Profile {
   name: string;
   role: string;
+  about: string;
   avatarUrl: string;
   socialLinks: SocialLink[];
   skills: string[];

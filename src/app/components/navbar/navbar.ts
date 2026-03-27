@@ -1,8 +1,9 @@
-import { Component, inject, signal, HostListener } from '@angular/core';
+import { Component, inject, signal, computed, HostListener, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from '../../services/theme.service';
 import { I18nService } from '../../services/i18n.service';
+import { ContentService } from '../../services/content.service';
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -16,12 +17,13 @@ export class NavbarComponent {
   protected i18n = inject(I18nService);
   private readonly router = inject(Router);
   private readonly themeService = inject(ThemeService);
+  private readonly contentService = inject(ContentService);
   theme = this.themeService.theme;
   activeSection = signal('hero');
   menuOpen = signal(false);
   currentPath = signal('/');
 
-  sections = [
+  private readonly allSections = [
     { id: 'hero', label: 'nav.home', route: null },
     { id: 'skills', label: 'nav.skills', route: null },
     { id: 'experience', label: 'nav.experience', route: null },
@@ -30,13 +32,19 @@ export class NavbarComponent {
     { id: 'projects', label: 'nav.projects', route: '/projects' }
   ];
 
+  sections = computed(() => this.allSections.filter(s => {
+    if (s.id === 'blog') return this.contentService.hasPosts();
+    if (s.id === 'projects') return this.contentService.hasProjects();
+    return true;
+  }));
+
   @HostListener('window:scroll')
   onScroll(): void {
     if (!this.isHomeRoute()) {
       return;
     }
 
-    const scrollSections = this.sections.filter(s => s.route === null);
+    const scrollSections = this.sections().filter(s => s.route === null);
     for (const section of [...scrollSections].reverse()) {
       const el = document.getElementById(section.id);
       if (el && el.getBoundingClientRect().top <= 100) {
@@ -54,6 +62,10 @@ export class NavbarComponent {
       .subscribe(() => {
         this.currentPath.set(this.normalizePath(this.router.url));
       });
+
+    effect(() => {
+      document.body.classList.toggle('menu-open', this.menuOpen());
+    });
   }
 
   toggleTheme(): void {

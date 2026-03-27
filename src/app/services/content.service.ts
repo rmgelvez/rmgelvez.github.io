@@ -1,7 +1,7 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { marked } from 'marked';
-import { map, shareReplay, Observable } from 'rxjs';
+import { map, shareReplay, Observable, tap } from 'rxjs';
 
 export interface ContentItem {
   slug: string;
@@ -19,16 +19,8 @@ export class ContentService {
   private readonly postFileNames = ['example-1.md', 'example-2.md'];
   private readonly projectFileNames = ['example-1.md', 'example-2.md'];
 
-  private readonly aboutHtml$ = this.http
-    .get('content/about.md', { responseType: 'text' })
-    .pipe(
-      map(md => marked.parse(md) as string),
-      shareReplay(1)
-    );
-
-  getAboutHtml(): Observable<string> {
-    return this.aboutHtml$;
-  }
+  readonly hasPosts = signal(this.postFileNames.length > 0);
+  readonly hasProjects = signal(this.projectFileNames.length > 0);
 
   getPosts(): Observable<ContentItem[]> {
     return this.loadContentItems('content/posts', this.postFileNames).pipe(shareReplay(1));
