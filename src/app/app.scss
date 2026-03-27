@@ -1,0 +1,22 @@
+main {
+  min-height: 100vh;
+  position: relative;
+}
+
+section {
+  scroll-margin-top: 64px;
+  padding-top: 4rem;
+  position: relative;
+  
+  @media (max-width: 768px) {
+    padding-top: 3rem;
+  }
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+}
+
+router-outlet {
+  display: block;
+}

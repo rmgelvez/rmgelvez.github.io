@@ -1,0 +1,61 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "blog": "Blog",
+    "projects": "Proyectos"
+  },
+  "hero": {
+    "title": "Desarrollador Full Stack",
+    "subtitle": "Construyendo soluciones elegantes para problemas complejos",
+    "cta": "Explora Mi Trabajo"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "category": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Herramientas & Tecnologías"
+    }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "present": "Presente"
+  },
+  "education": {
+    "title": "Educación",
+    "sectionTitle": "Educación & Certificaciones",
+    "certifications": "Certificaciones",
+    "inProgress": "En Progreso",
+    "aptitudes": "Aptitudes",
+    "languages": "Idiomas"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Pensamientos, ideas y artículos sobre desarrollo web",
+    "readMore": "Leer Más",
+    "publishedOn": "Publicado el",
+    "noPostsYet": "Sin posts aún. ¡Vuelve pronto!"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Una selección de proyectos que he construido y contribuido",
+    "viewProject": "Ver Proyecto",
+    "noProjectsYet": "Sin proyectos aún. ¡Vuelve pronto!"
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados",
+    "madeWith": "Hecho con",
+    "by": "por",
+    "builtWith": "Hecho con Angular"
+  },
+  "contentDetail": {
+    "backTo": "Volver a",
+    "postNotFound": "Post no encontrado",
+    "projectNotFound": "Proyecto no encontrado",
+    "postNotFoundMessage": "El post seleccionado no pudo ser cargado.",
+    "projectNotFoundMessage": "El proyecto seleccionado no pudo ser cargado."
+  }
+}

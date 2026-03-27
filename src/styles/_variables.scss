@@ -1,0 +1,71 @@
+:root,
+[data-theme='dark'] {
+  --bg-primary: #050816;
+  --bg-secondary: #0b1120;
+  --bg-tertiary: #101a32;
+  --panel-bg: #0d1427;
+  --text-primary: #f4f7ff;
+  --text-secondary: #a7b4d0;
+  --text-tertiary: #7080a4;
+  --accent-primary: #47f0ff;
+  --accent-secondary: #8b5cf6;
+  --accent-soft: rgba(71, 240, 255, 0.08);
+  --accent-violet-soft: rgba(139, 92, 246, 0.09);
+  --accent-gradient: linear-gradient(135deg, #47f0ff 0%, #8b5cf6 100%);
+  --border-color: rgba(124, 145, 191, 0.22);
+  --shadow: 0 10px 24px rgba(2, 6, 23, 0.22);
+  --shadow-lg: 0 16px 34px rgba(2, 6, 23, 0.3);
+  --navbar-bg: rgba(7, 10, 24, 0.94);
+  --selection-bg: rgba(71, 240, 255, 0.22);
+}
+
+[data-theme='light'] {
+  --bg-primary: #f6f8ff;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #edf2ff;
+  --panel-bg: #ffffff;
+  --text-primary: #151b2f;
+  --text-secondary: #51607d;
+  --text-tertiary: #74829d;
+  --accent-primary: #00bad1;
+  --accent-secondary: #7c3aed;
+  --accent-soft: rgba(0, 186, 209, 0.08);
+  --accent-violet-soft: rgba(124, 58, 237, 0.08);
+  --accent-gradient: linear-gradient(135deg, #00bad1 0%, #7c3aed 100%);
+  --border-color: rgba(102, 119, 158, 0.18);
+  --shadow: 0 10px 22px rgba(32, 47, 86, 0.06);
+  --shadow-lg: 0 16px 34px rgba(32, 47, 86, 0.1);
+  --navbar-bg: rgba(246, 248, 255, 0.94);
+  --selection-bg: rgba(0, 186, 209, 0.18);
+}
+
+:root {
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+  --font-display: 'Inter', 'Manrope', sans-serif;
+  --font-hero: 'Inter', 'Manrope', sans-serif;
+  --font-label: 'JetBrains Mono', 'Menlo', 'Monaco', monospace;
+  --font-mono: 'JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+
+  --fs-hero-name: clamp(2.2rem, 4.5vw, 3.2rem);
+  --fs-section-title: clamp(2rem, 4vw, 3.25rem);
+  --fs-h2: clamp(1.65rem, 2.6vw, 2.25rem);
+  --fs-h3: clamp(1.2rem, 2vw, 1.55rem);
+  --fs-body: 1rem;
+  --fs-small: 0.94rem;
+  --fs-xs: 0.76rem;
+
+  --lh-tight: 1.2;
+  --lh-normal: 1.7;
+
+  --fw-normal: 400;
+  --fw-semibold: 600;
+}
+
+// Container
+$container-max: 1000px;
+$container-padding: 2rem;
+
+// Z-index
+$z-navbar: 100;
+$z-menu: 99;
+$z-modal: 200;

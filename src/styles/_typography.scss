@@ -1,0 +1,73 @@
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  font-weight: var(--fw-normal);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.35s ease, color 0.35s ease;
+  background-image: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 200;
+  line-height: var(--lh-tight);
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+}
+
+h1 {
+  font-size: var(--fs-hero-name);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+p {
+  margin: 0;
+  line-height: var(--lh-normal);
+}
+
+a {
+  color: inherit;
+  transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+::selection {
+  background: var(--selection-bg);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: var(--fw-semibold);
+}
+
+em {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--fs-small);
+}

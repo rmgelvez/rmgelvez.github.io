@@ -1,0 +1,51 @@
+<div class="education">
+  <h2 class="section-title">{{ i18n.t('education.sectionTitle') }}</h2>
+
+  <div class="education__grid">
+    <div class="education__section">
+      <h3 class="education__subtitle">{{ i18n.t('education.title') }}</h3>
+      @for (edu of i18n.profile().education; track edu.title) {
+        <div class="education__card">
+          <h4>{{ edu.title }}</h4>
+          <p class="education__institution">{{ edu.institution }}</p>
+          <span class="education__badge" [class.in-progress]="edu.status === 'in_progress'">
+            {{ edu.status === 'in_progress' ? i18n.t('education.inProgress') : edu.year }}
+          </span>
+        </div>
+      }
+    </div>
+
+    <div class="education__section">
+      <h3 class="education__subtitle">{{ i18n.t('education.certifications') }}</h3>
+      @for (cert of i18n.profile().certifications; track cert.name) {
+        <a class="education__card education__card--cert" [href]="cert.credentialUrl" target="_blank" rel="noopener noreferrer">
+          <div class="education__cert-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <span>{{ cert.name }}</span>
+          <svg class="education__external" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      }
+    </div>
+  </div>
+
+  <div class="education__extras">
+    <div class="education__group">
+      <h3 class="education__subtitle">{{ i18n.t('education.aptitudes') }}</h3>
+      <div class="education__tags">
+        @for (apt of i18n.profile().aptitudes; track apt) {
+          <span class="education__tag">{{ apt }}</span>
+        }
+      </div>
+    </div>
+
+    <div class="education__group">
+      <h3 class="education__subtitle">{{ i18n.t('education.languages') }}</h3>
+      <div class="education__tags">
+        @for (lang of i18n.profile().languages; track lang.name) {
+          <span class="education__tag">{{ lang.name }} — {{ lang.level }}</span>
+        }
+      </div>
+    </div>
+  </div>
+</div>

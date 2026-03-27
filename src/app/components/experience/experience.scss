@@ -1,0 +1,155 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as *;
+
+.experience {
+  @include container;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.section-title {
+  font-size: var(--fs-section-title);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.04em;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 88px;
+    height: 3px;
+    background: var(--accent-gradient);
+    margin: 1.1rem auto 0;
+    border-radius: 999px;
+    box-shadow: 0 0 24px var(--accent-soft);
+  }
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, var(--accent-primary), var(--accent-secondary), transparent);
+    opacity: 0.75;
+  }
+
+  &__item {
+    position: relative;
+    padding-bottom: 2.5rem;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    left: -2rem;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    z-index: 1;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 0 6px rgba(5, 8, 22, 0.6);
+
+    &.current {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 6px rgba(71, 240, 255, 0.08), 0 0 22px rgba(71, 240, 255, 0.22);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+  }
+
+  &__card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 1.5rem;
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+    box-shadow: var(--shadow);
+
+    &:hover {
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-lg), 0 0 28px var(--accent-soft);
+      transform: translateY(-4px);
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+
+    @include respond-to('md') {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__role {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  &__date {
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    font-family: var(--font-label);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  &__company {
+    color: var(--accent-primary);
+    font-weight: 600;
+    margin-bottom: 0.95rem;
+    font-size: 0.96rem;
+  }
+
+  &__highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    li {
+      color: var(--text-secondary);
+      font-size: var(--fs-small);
+      line-height: 1.6;
+      position: relative;
+      padding-left: 1rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.62rem;
+        width: 0.4rem;
+        height: 0.4rem;
+        border-radius: 50%;
+        background: var(--accent-secondary);
+        box-shadow: 0 0 14px var(--accent-violet-soft);
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 6px rgba(71, 240, 255, 0.08), 0 0 22px rgba(71, 240, 255, 0.22); }
+  50% { box-shadow: 0 0 0 12px rgba(71, 240, 255, 0), 0 0 34px rgba(71, 240, 255, 0.16); }
+}
