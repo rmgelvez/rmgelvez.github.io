@@ -1,0 +1,1 @@
+I'm passionate about technology and how it helps us solve problems. As a software developer, I continuously learn cutting-edge tools and techniques to improve productivity. My main goal is to generate and share knowledge.

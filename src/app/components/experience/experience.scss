@@ -1,0 +1,132 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as *;
+
+.experience {
+  @include container;
+  padding: 3rem 0;
+}
+
+.section-title {
+  font-size: var(--fs-section-title);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  letter-spacing: -0.02em;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--accent-primary);
+    margin: 1rem auto 0;
+    border-radius: 1px;
+  }
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border-color);
+  }
+
+  &__item {
+    position: relative;
+    padding-bottom: 2.5rem;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    left: -2rem;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    z-index: 1;
+    transition: all 0.2s ease;
+
+    &.current {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 4px rgba(100, 100, 100, 0.1);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+  }
+
+  &__card {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: v.$radius-lg;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow);
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+
+    @include respond-to('md') {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__role {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  &__date {
+    font-size: var(--fs-small);
+    color: var(--text-tertiary);
+  }
+
+  &__company {
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  &__highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    li {
+      color: var(--text-secondary);
+      font-size: var(--fs-small);
+      line-height: 1.5;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(100, 100, 100, 0.1); }
+  50% { box-shadow: 0 0 0 8px rgba(100, 100, 100, 0.05); }
+}

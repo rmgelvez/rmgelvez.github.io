@@ -1,0 +1,16 @@
+// Global styles entry point
+// Import order is critical for SCSS compilation
+
+// 1. Variables (includes font imports, CSS variables, SCSS variables)
+@use 'styles/variables';
+
+// 2. Reset (base element styles)
+@use 'styles/reset';
+
+// 3. Typography (text, heading, and font-related styles)
+@use 'styles/typography';
+
+// 4. Animations (keyframes and animation classes)
+@use 'styles/animations';
+
+@import '../assets/lib/fonts/main.css';

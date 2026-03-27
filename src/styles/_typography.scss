@@ -1,0 +1,56 @@
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  font-weight: var(--fw-normal);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  font-size: var(--fs-hero-name);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+p {
+  margin: 0;
+  line-height: var(--lh-normal);
+}
+
+a {
+  color: inherit;
+}
+
+strong {
+  font-weight: var(--fw-semibold);
+}
+
+em {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--fs-small);
+}

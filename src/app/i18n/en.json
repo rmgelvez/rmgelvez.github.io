@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Home",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "blog": "Blog",
+    "projects": "Projects"
+  },
+  "hero": {
+    "title": "Full Stack Developer",
+    "subtitle": "Building elegant solutions to complex problems",
+    "cta": "Explore My Work"
+  },
+  "skills": {
+    "title": "Skills",
+    "category": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools & Technologies"
+    }
+  },
+  "experience": {
+    "title": "Experience"
+  },
+  "education": {
+    "title": "Education"
+  },
+  "blog": {
+    "title": "Blog",
+    "readMore": "Read More",
+    "publishedOn": "Published on",
+    "noPostsYet": "No posts yet. Check back soon!"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewProject": "View Project",
+    "noProjectsYet": "No projects yet. Check back soon!"
+  },
+  "footer": {
+    "copyright": "All rights reserved",
+    "madeWith": "Made with",
+    "by": "by"
+  }
+}

@@ -1,0 +1,24 @@
+@use 'variables' as *;
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+@mixin respond-to($bp) {
+  @if $bp == 'sm' {
+    @media (min-width: $breakpoint-sm) { @content; }
+  }
+  @if $bp == 'md' {
+    @media (min-width: $breakpoint-md) { @content; }
+  }
+  @if $bp == 'lg' {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}

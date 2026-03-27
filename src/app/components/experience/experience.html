@@ -1,0 +1,25 @@
+<div class="experience">
+  <h2 class="section-title">Experience</h2>
+
+  <div class="timeline">
+    @for (exp of experiences; track exp.company; let i = $index) {
+      <div class="timeline__item">
+        <div class="timeline__dot" [class.current]="!exp.endDate"></div>
+        <div class="timeline__card">
+          <div class="timeline__header">
+            <h3 class="timeline__role">{{ exp.role }}</h3>
+            <span class="timeline__date">
+              {{ exp.startDate }} — {{ exp.endDate ?? 'Present' }}
+            </span>
+          </div>
+          <p class="timeline__company">{{ exp.company }}</p>
+          <ul class="timeline__highlights">
+            @for (h of exp.highlights; track h) {
+              <li>{{ h }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+  </div>
+</div>

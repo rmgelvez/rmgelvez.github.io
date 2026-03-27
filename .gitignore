@@ -1,27 +1,61 @@
-# Bundler cache
-.bundle
-vendor
-Gemfile.lock
+# Angular
+dist/
+.next/
 
-# Jekyll cache
-.jekyll-cache
-.jekyll-metadata
-_site
-
-# RubyGems
-*.gem
-
-# NPM dependencies
-node_modules
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
 package-lock.json
+yarn.lock
 
-# IDE configurations
-.idea
+# IDE
 .vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
 !.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build artifacts
+dist/
+build/
+*.tsbuildinfo
+tsconfig*.tsbuildinfo
+
+# Testing
+coverage/
+.nyc_output/
+
+# Security & Sensitive
+*.pem
+*.key
+*.cert
+*.crt
+.env*.secret
+secrets/
+
+# Dependencies
+node_modules/
+.npm/
+
+# Logs
+logs/
+*.log
 
 # Misc
-_sass/vendors
-assets/js/dist
+.cache
+.eslintcache
+.prettierignore

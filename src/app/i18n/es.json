@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "blog": "Blog",
+    "projects": "Proyectos"
+  },
+  "hero": {
+    "title": "Desarrollador Full Stack",
+    "subtitle": "Construyendo soluciones elegantes para problemas complejos",
+    "cta": "Explora Mi Trabajo"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "category": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Herramientas & Tecnologías"
+    }
+  },
+  "experience": {
+    "title": "Experiencia"
+  },
+  "education": {
+    "title": "Educación"
+  },
+  "blog": {
+    "title": "Blog",
+    "readMore": "Leer Más",
+    "publishedOn": "Publicado el",
+    "noPostsYet": "Sin posts aún. ¡Vuelve pronto!"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "viewProject": "Ver Proyecto",
+    "noProjectsYet": "Sin proyectos aún. ¡Vuelve pronto!"
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados",
+    "madeWith": "Hecho con",
+    "by": "por"
+  }
+}
