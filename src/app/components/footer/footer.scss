@@ -3,8 +3,8 @@
 .footer {
   border-top: 1px solid var(--border-color);
   margin-top: 6rem;
-  padding: 3rem 0;
-  background: var(--bg-secondary);
+  padding: 3rem 0 3.5rem;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.02));
 
   &__container {
     @include container;
@@ -12,6 +12,11 @@
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    padding: 1.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 28px;
+    background: var(--panel-bg);
+    box-shadow: var(--shadow);
   }
 
   &__links {
@@ -24,10 +29,11 @@
       font-size: var(--fs-small);
       color: var(--text-secondary);
       font-weight: 500;
-      transition: color 0.2s ease;
+      transition: color 0.2s ease, transform 0.2s ease;
 
       &:hover {
-        color: var(--text-primary);
+        color: var(--accent-primary);
+        transform: translateY(-2px);
       }
     }
   }
@@ -35,5 +41,6 @@
   &__copy {
     font-size: var(--fs-small);
     color: var(--text-tertiary);
+    text-align: center;
   }
 }

@@ -35,24 +35,31 @@ import { I18nService } from '../../services/i18n.service';
     .blog-container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 5rem 2rem 4rem;
+      padding: 6rem 2rem 4rem;
     }
 
     .blog-header {
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.75rem;
+      padding: 2rem;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      background: var(--bg-secondary);
+      box-shadow: none;
     }
 
     .blog-header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
       margin: 0;
       line-height: 1.2;
+      letter-spacing: -0.05em;
     }
 
     .subtitle {
       font-size: 1rem;
       color: var(--text-secondary, #666);
       margin-top: 0.75rem;
+      max-width: 46rem;
     }
 
     .posts-grid {
@@ -62,28 +69,36 @@ import { I18nService } from '../../services/i18n.service';
     }
 
     .post-card {
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--border-color, #dfe3ea);
-      transition: border-color 0.2s ease, transform 0.2s ease;
+      padding: 1.6rem 1.75rem;
+      border: 1px solid var(--border-color, #dfe3ea);
+      border-radius: 14px;
+      background: var(--bg-secondary);
+      box-shadow: none;
+      transition: border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
     }
 
     .post-card:hover {
-      transform: translateX(4px);
+      transform: translateY(-4px);
       border-color: var(--accent-primary, #2c7be5);
+      box-shadow: var(--shadow, 0 18px 38px rgba(15, 23, 42, 0.12));
     }
 
     .post-date {
       display: block;
-      font-size: 0.9rem;
-      color: var(--text-secondary, #666);
-      margin-bottom: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--accent-primary, #666);
+      margin-bottom: 0.7rem;
+      font-family: var(--font-label, monospace);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
     .post-card h2 {
-      font-size: 1.65rem;
-      font-weight: 700;
-      margin: 0.5rem 0;
-      line-height: 1.3;
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin: 0.25rem 0 0.5rem;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
     }
 
     .post-excerpt {
@@ -97,12 +112,13 @@ import { I18nService } from '../../services/i18n.service';
       color: var(--accent-primary, #2c7be5);
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s ease;
+      transition: all 0.22s ease;
       display: inline-block;
     }
 
     .read-more:hover {
       color: var(--text-primary, #111827);
+      transform: translateX(4px);
     }
 
     .empty-state {
@@ -114,7 +130,7 @@ import { I18nService } from '../../services/i18n.service';
 
     @media (max-width: 768px) {
       .blog-container {
-        padding: 2rem 1rem;
+        padding: 5rem 1rem 2rem;
       }
 
       .blog-header h1 {

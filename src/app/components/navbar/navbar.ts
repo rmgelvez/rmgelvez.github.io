@@ -1,8 +1,9 @@
 import { Component, inject, signal, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from '../../services/theme.service';
 import { I18nService } from '../../services/i18n.service';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
@@ -18,6 +19,7 @@ export class NavbarComponent {
   theme = this.themeService.theme;
   activeSection = signal('hero');
   menuOpen = signal(false);
+  currentPath = signal('/');
 
   sections = [
     { id: 'hero', label: 'nav.home', route: null },
@@ -30,6 +32,10 @@ export class NavbarComponent {
 
   @HostListener('window:scroll')
   onScroll(): void {
+    if (!this.isHomeRoute()) {
+      return;
+    }
+
     const scrollSections = this.sections.filter(s => s.route === null);
     for (const section of [...scrollSections].reverse()) {
       const el = document.getElementById(section.id);
@@ -38,6 +44,16 @@ export class NavbarComponent {
         break;
       }
     }
+  }
+
+  constructor() {
+    this.currentPath.set(this.normalizePath(this.router.url));
+
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.currentPath.set(this.normalizePath(this.router.url));
+      });
   }
 
   toggleTheme(): void {
@@ -62,6 +78,15 @@ export class NavbarComponent {
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
       }, 50);
     });
+  }
+
+  isHomeRoute(): boolean {
+    return this.currentPath() === '/';
+  }
+
+  private normalizePath(url: string): string {
+    const [path] = url.split('?');
+    return path.split('#')[0] || '/';
   }
 
   getLabel(label: string): string {

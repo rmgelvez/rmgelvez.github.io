@@ -1,12 +1,10 @@
 <nav class="navbar">
   <div class="navbar__container">
-    <a class="navbar__logo" (click)="scrollTo('hero')">RG</a>
-
-    <button class="navbar__hamburger" (click)="toggleMenu()" [class.open]="menuOpen()" [attr.aria-label]="'Toggle menu'">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <a class="navbar__logo" (click)="scrollTo('hero')">
+      <svg viewBox="0 0 80 50" class="navbar__logo-svg" aria-label="RG">
+        <text x="40" y="36" text-anchor="middle" class="navbar__logo-text">Ronal Gelvez</text>
+      </svg>
+    </a>
 
     <ul class="navbar__links" [class.open]="menuOpen()">
       @for (section of sections; track section.id) {
@@ -23,7 +21,7 @@
           <li>
             <a
               class="navbar__link"
-              [class.active]="activeSection() === section.id"
+              [class.active]="isHomeRoute() && activeSection() === section.id"
               (click)="scrollTo(section.id)"
             >{{ getLabel(section.label) }}</a>
           </li>
@@ -43,5 +41,11 @@
         }
       </button>
     </div>
+
+    <button class="navbar__hamburger" (click)="toggleMenu()" [class.open]="menuOpen()" [attr.aria-label]="'Toggle menu'">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </nav>

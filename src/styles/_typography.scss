@@ -11,7 +11,8 @@ body {
   font-weight: var(--fw-normal);
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.35s ease, color 0.35s ease;
+  background-image: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: var(--lh-tight);
   color: var(--text-primary);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.035em;
 }
 
 h1 {
@@ -41,6 +42,22 @@ p {
 
 a {
   color: inherit;
+  transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+::selection {
+  background: var(--selection-bg);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 strong {

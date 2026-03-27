@@ -9,10 +9,8 @@
       />
     </div>
 
-    <h1 class="hero__name">{{ profile.name }}</h1>
+    <h1 class="hero__name">{{ displayedName() }}<span class="hero__cursor" [class.hidden]="!showCursor()">|</span></h1>
     <p class="hero__role">{{ profile.role }}</p>
-
-    <div class="hero__bio" [innerHTML]="aboutHtml()"></div>
 
     <div class="hero__social">
       @for (link of profile.socialLinks; track link.platform) {
@@ -45,7 +43,7 @@
     </div>
   </div>
 
-  <div class="hero__scroll-indicator">
+  <div class="hero__scroll-indicator" (click)="scrollToNext()">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
   </div>
 </div>
