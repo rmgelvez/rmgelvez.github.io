@@ -1,7 +1,7 @@
 <div class="content-detail">
   <div class="content-detail__container">
     <a class="content-detail__back" [routerLink]="backLink">
-      ← {{ backLabel }}
+      ← {{ i18n.t('contentDetail.backTo') }} {{ backLabel }}
     </a>
 
     <ng-container *ngIf="item; else missingContent">

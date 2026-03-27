@@ -21,25 +21,41 @@
     }
   },
   "experience": {
-    "title": "Experience"
+    "title": "Experience",
+    "present": "Present"
   },
   "education": {
-    "title": "Education"
+    "title": "Education",
+    "sectionTitle": "Education & Certifications",
+    "certifications": "Certifications",
+    "inProgress": "In Progress",
+    "aptitudes": "Aptitudes",
+    "languages": "Languages"
   },
   "blog": {
     "title": "Blog",
+    "subtitle": "Thoughts, insights, and articles about web development",
     "readMore": "Read More",
     "publishedOn": "Published on",
     "noPostsYet": "No posts yet. Check back soon!"
   },
   "projects": {
     "title": "Projects",
+    "subtitle": "A selection of projects I've built and contributed to",
     "viewProject": "View Project",
     "noProjectsYet": "No projects yet. Check back soon!"
   },
   "footer": {
     "copyright": "All rights reserved",
     "madeWith": "Made with",
-    "by": "by"
+    "by": "by",
+    "builtWith": "Built with Angular"
+  },
+  "contentDetail": {
+    "backTo": "Back to",
+    "postNotFound": "Post not found",
+    "projectNotFound": "Project not found",
+    "postNotFoundMessage": "The selected post could not be loaded.",
+    "projectNotFoundMessage": "The selected project could not be loaded."
   }
 }

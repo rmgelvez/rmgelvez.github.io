@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { PROFILE_DATA } from '../../data/profile.data';
-import { SocialLink } from '../../models/profile.model';
+import { Component, inject } from '@angular/core';
+import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,7 +7,6 @@ import { SocialLink } from '../../models/profile.model';
   styleUrl: './footer.scss'
 })
 export class FooterComponent {
-  socialLinks: SocialLink[] = PROFILE_DATA.socialLinks;
+  protected readonly i18n = inject(I18nService);
   currentYear = new Date().getFullYear();
-  name = PROFILE_DATA.name;
 }

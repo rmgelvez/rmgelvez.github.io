@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { PROFILE_DATA } from '../../data/profile.data';
-import { Experience } from '../../models/profile.model';
+import { Component, inject } from '@angular/core';
+import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-experience',
@@ -8,5 +7,5 @@ import { Experience } from '../../models/profile.model';
   styleUrl: './experience.scss'
 })
 export class ExperienceComponent {
-  experiences: Experience[] = PROFILE_DATA.experience;
+  protected readonly i18n = inject(I18nService);
 }

@@ -18,9 +18,9 @@ export class ContentDetailComponent implements OnInit {
 
   item?: ContentItem;
   backLink = '/blog';
-  backLabel = 'Back to blog';
-  missingTitle = 'Content not found';
-  missingMessage = 'The requested content could not be loaded.';
+  backLabel = '';
+  missingTitle = '';
+  missingMessage = '';
 
   ngOnInit(): void {
     const slug = this.route.snapshot.paramMap.get('slug') ?? '';
@@ -30,10 +30,12 @@ export class ContentDetailComponent implements OnInit {
     this.backLabel = contentType === 'project'
       ? this.i18n.t('projects.title', 'Projects')
       : this.i18n.t('blog.title', 'Blog');
-    this.missingTitle = contentType === 'project' ? 'Project not found' : 'Post not found';
+    this.missingTitle = contentType === 'project'
+      ? this.i18n.t('contentDetail.projectNotFound', 'Project not found')
+      : this.i18n.t('contentDetail.postNotFound', 'Post not found');
     this.missingMessage = contentType === 'project'
-      ? 'The selected project could not be loaded.'
-      : 'The selected post could not be loaded.';
+      ? this.i18n.t('contentDetail.projectNotFoundMessage', 'The selected project could not be loaded.')
+      : this.i18n.t('contentDetail.postNotFoundMessage', 'The selected post could not be loaded.');
 
     const request = contentType === 'project'
       ? this.contentService.getProjectBySlug(slug)

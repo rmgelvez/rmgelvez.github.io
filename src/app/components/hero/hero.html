@@ -3,17 +3,17 @@
     <div class="hero__avatar-wrapper">
       <img
         class="hero__avatar"
-        [src]="profile.avatarUrl"
-        [alt]="profile.name"
+        [src]="i18n.profile().avatarUrl"
+        [alt]="i18n.profile().name"
         loading="eager"
       />
     </div>
 
     <h1 class="hero__name">{{ displayedName() }}<span class="hero__cursor" [class.hidden]="!showCursor()">|</span></h1>
-    <p class="hero__role">{{ profile.role }}</p>
+    <p class="hero__role">{{ i18n.profile().role }}</p>
 
     <div class="hero__social">
-      @for (link of profile.socialLinks; track link.platform) {
+      @for (link of i18n.profile().socialLinks; track link.platform) {
         <a
           class="hero__social-link"
           [href]="link.url"

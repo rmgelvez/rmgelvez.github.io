@@ -1,12 +1,12 @@
 <footer class="footer">
   <div class="footer__container">
     <div class="footer__links">
-      @for (link of socialLinks; track link.platform) {
+      @for (link of i18n.profile().socialLinks; track link.platform) {
         <a [href]="link.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="link.platform">
           {{ link.platform }}
         </a>
       }
     </div>
-    <p class="footer__copy">&copy; {{ currentYear }} {{ name }}. Built with Angular.</p>
+    <p class="footer__copy">&copy; {{ currentYear }} {{ i18n.profile().name }}. {{ i18n.t('footer.builtWith') }}.</p>
   </div>
 </footer>

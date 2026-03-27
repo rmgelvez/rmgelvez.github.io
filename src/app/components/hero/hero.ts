@@ -1,5 +1,5 @@
-import { Component, signal, OnInit } from '@angular/core';
-import { PROFILE_DATA } from '../../data/profile.data';
+import { Component, signal, OnInit, inject } from '@angular/core';
+import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-hero',
@@ -7,12 +7,12 @@ import { PROFILE_DATA } from '../../data/profile.data';
   styleUrl: './hero.scss'
 })
 export class HeroComponent implements OnInit {
-  profile = PROFILE_DATA;
+  protected readonly i18n = inject(I18nService);
   displayedName = signal('');
   showCursor = signal(true);
 
   ngOnInit(): void {
-    const fullName = this.profile.name;
+    const fullName = this.i18n.profile().name;
     let index = 0;
     const interval = setInterval(() => {
       if (index < fullName.length) {

@@ -1,15 +1,15 @@
 <div class="experience">
-  <h2 class="section-title">Experience</h2>
+  <h2 class="section-title">{{ i18n.t('experience.title') }}</h2>
 
   <div class="timeline">
-    @for (exp of experiences; track exp.company; let i = $index) {
+    @for (exp of i18n.profile().experience; track exp.company; let i = $index) {
       <div class="timeline__item">
         <div class="timeline__dot" [class.current]="!exp.endDate"></div>
         <div class="timeline__card">
           <div class="timeline__header">
             <h3 class="timeline__role">{{ exp.role }}</h3>
             <span class="timeline__date">
-              {{ exp.startDate }} — {{ exp.endDate ?? 'Present' }}
+              {{ exp.startDate }} — {{ exp.endDate ?? i18n.t('experience.present') }}
             </span>
           </div>
           <p class="timeline__company">{{ exp.company }}</p>

@@ -1,6 +1,9 @@
 import { Injectable, signal, computed, effect, inject, LOCALE_ID } from '@angular/core';
 import * as enTranslations from '../i18n/en.json';
 import * as esTranslations from '../i18n/es.json';
+import { PROFILE_DATA_EN } from '../data/profile.data.en';
+import { PROFILE_DATA_ES } from '../data/profile.data.es';
+import { Profile } from '../models/profile.model';
 
 type Language = 'en' | 'es';
 
@@ -23,9 +26,16 @@ export class I18nService {
     es: esTranslations as unknown as Translations
   };
 
+  private readonly profiles: Record<Language, Profile> = {
+    en: PROFILE_DATA_EN,
+    es: PROFILE_DATA_ES
+  };
+
   language = this.currentLanguage.asReadonly();
 
   currentTranslations = computed(() => this.translations[this.currentLanguage()]);
+
+  profile = computed<Profile>(() => this.profiles[this.currentLanguage()]);
 
   constructor() {
     effect(() => {

@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { PROFILE_DATA } from '../../data/profile.data';
-import { Education, Certification, Language } from '../../models/profile.model';
+import { Component, inject } from '@angular/core';
+import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-education',
@@ -8,8 +7,5 @@ import { Education, Certification, Language } from '../../models/profile.model';
   styleUrl: './education.scss'
 })
 export class EducationComponent {
-  education: Education[] = PROFILE_DATA.education;
-  certifications: Certification[] = PROFILE_DATA.certifications;
-  aptitudes: string[] = PROFILE_DATA.aptitudes;
-  languages: Language[] = PROFILE_DATA.languages;
+  protected readonly i18n = inject(I18nService);
 }
