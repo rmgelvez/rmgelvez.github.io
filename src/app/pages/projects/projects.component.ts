@@ -11,7 +11,7 @@ import { I18nService } from '../../services/i18n.service';
   templateUrl: './projects.html',
   styleUrl: './projects.scss'
 })
-export class ProjectsComponent implements OnInit {
+export default class ProjectsComponent implements OnInit {
   protected i18n = inject(I18nService);
   private readonly contentService = inject(ContentService);
   

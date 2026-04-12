@@ -15,4 +15,4 @@ import { EducationComponent } from '../../components/education/education';
   ],
   templateUrl: './home.html'
 })
-export class HomeComponent {}
+export default class HomeComponent {}
