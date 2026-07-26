@@ -1,7 +1,11 @@
-<app-navbar />
+@if (showPortfolioLayout()) {
+  <app-navbar />
+}
 
 <main>
   <router-outlet />
 </main>
 
-<app-footer />
+@if (showPortfolioLayout()) {
+  <app-footer />
+}

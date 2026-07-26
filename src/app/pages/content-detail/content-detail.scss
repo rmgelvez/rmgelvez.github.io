@@ -38,9 +38,9 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2.35rem, 5vw, 4.4rem);
-      line-height: 0.98;
-      letter-spacing: -0.06em;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
     }
   }
 
@@ -69,52 +69,166 @@
     border-radius: 16px;
     background: var(--bg-secondary);
 
-    :where(h2, h3, h4) {
-      margin: 2rem 0 0.9rem;
-      line-height: 1.2;
-      letter-spacing: -0.04em;
-    }
-
-    :where(p, ul, ol, pre, blockquote) {
-      margin: 0 0 1.1rem;
-    }
-
-    ul, ol {
-      padding-left: 1.4rem;
-    }
-
-    a {
-      color: var(--accent-primary);
-      text-decoration: none;
-
-      &:hover {
-        color: var(--accent-secondary);
+    // ::ng-deep needed because [innerHTML] content bypasses Angular's view encapsulation
+    ::ng-deep {
+      h2 {
+        margin: 2.5rem 0 1rem;
+        font-size: clamp(1.4rem, 3vw, 1.9rem);
+        line-height: 1.15;
+        letter-spacing: -0.04em;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-color);
       }
-    }
 
-    pre {
-      overflow-x: auto;
-      padding: 1rem 1.1rem;
-      border-radius: 18px;
-      background: var(--bg-tertiary);
-      border: 1px solid var(--border-color);
-    }
+      h3 {
+        margin: 1.8rem 0 0.75rem;
+        font-size: 1.2rem;
+        line-height: 1.2;
+        letter-spacing: -0.03em;
+        color: var(--accent-primary);
+      }
 
-    code {
-      font-family: var(--font-mono, 'JetBrains Mono', monospace);
-      font-size: 0.95em;
-    }
+      h4 {
+        margin: 1.5rem 0 0.6rem;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--text-secondary);
+      }
 
-    :not(pre) > code {
-      padding: 0.15rem 0.35rem;
-      border-radius: 6px;
-      background: var(--bg-tertiary);
-    }
+      :where(p, ul, ol, pre, blockquote, table) {
+        margin: 0 0 1.25rem;
+      }
 
-    blockquote {
-      padding: 0.25rem 0 0.25rem 1rem;
-      border-left: 3px solid var(--accent-primary);
-      color: var(--text-secondary);
+      ul, ol {
+        padding-left: 1.5rem;
+
+        li {
+          margin-bottom: 0.35rem;
+        }
+      }
+
+      strong {
+        font-weight: 700;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid var(--border-color);
+        margin: 2.5rem 0;
+      }
+
+      a {
+        color: var(--accent-primary);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.18s ease, color 0.18s ease;
+
+        &:hover {
+          color: var(--accent-primary);
+          border-bottom-color: currentColor;
+        }
+      }
+
+      // CTA: párrafo que contiene solo un link → renderiza como botón
+      p:has(> a:only-child) {
+        margin-top: 2rem;
+
+        a {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.75rem 1.5rem;
+          border: 1.5px solid var(--accent-primary);
+          border-bottom: 1.5px solid var(--accent-primary);
+          border-radius: 10px;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          color: var(--accent-primary);
+          background: transparent;
+          transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+
+          &:hover {
+            background: var(--accent-primary);
+            color: #050816;
+            border-bottom-color: var(--accent-primary);
+            transform: translateY(-2px);
+          }
+        }
+      }
+
+      pre {
+        overflow-x: auto;
+        padding: 1rem 1.25rem;
+        border-radius: 12px;
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-color);
+        line-height: 1.6;
+      }
+
+      code {
+        font-family: var(--font-mono, 'JetBrains Mono', monospace);
+        font-size: 0.9em;
+      }
+
+      :not(pre) > code {
+        padding: 0.15rem 0.4rem;
+        border-radius: 5px;
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-color);
+        font-size: 0.85em;
+      }
+
+      blockquote {
+        padding: 0.5rem 1rem;
+        border-left: 3px solid var(--accent-primary);
+        color: var(--text-secondary);
+        background: var(--bg-tertiary);
+        border-radius: 0 8px 8px 0;
+        font-style: italic;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95em;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+
+        th {
+          background: var(--bg-tertiary);
+          color: var(--accent-primary);
+          font-family: var(--font-label, monospace);
+          font-size: 0.75em;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          padding: 0.75rem 1rem;
+          text-align: left;
+          border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+          padding: 0.65rem 1rem;
+          border-bottom: 1px solid var(--border-color);
+          color: var(--text-primary);
+        }
+
+        tr:last-child td {
+          border-bottom: none;
+        }
+
+        tr:nth-child(even) td {
+          background: rgb(255 255 255 / 0.025);
+        }
+      }
+
+      img {
+        max-width: 100%;
+        border-radius: 10px;
+        display: block;
+      }
     }
   }
 

@@ -69,6 +69,31 @@
                 "glob": "**/*.md",
                 "input": "src/content/",
                 "output": "/content/"
+              },
+              {
+                "glob": "**/index.json",
+                "input": "src/content/",
+                "output": "/content/"
+              },
+              {
+                "glob": "index.html",
+                "input": "src/app/pages/lab/calculadora-consumo",
+                "output": "/calculadora-consumo/"
+              },
+              {
+                "glob": "styles.css",
+                "input": "src/app/pages/lab/calculadora-consumo",
+                "output": "/calculadora-consumo/"
+              },
+              {
+                "glob": "app.js",
+                "input": "src/app/pages/lab/calculadora-consumo",
+                "output": "/calculadora-consumo/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/pages/lab/calculadora-consumo/svg",
+                "output": "/calculadora-consumo/svg/"
               }
             ],
             "styles": [
@@ -136,5 +161,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "bc618bc6-8682-4a02-b85a-0f1cf7468a82"
   }
 }

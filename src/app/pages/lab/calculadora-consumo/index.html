@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Consumo Eléctrico</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="app-header-left">
+      <span class="app-badge">Feria de la Creatividad</span>
+      <span class="app-title">Calculadora de Consumo Eléctrico</span>
+    </div>
+    <div class="app-header-right">
+      <span class="app-author">Carlos Alberto Villamizar Ruiz</span>
+      <span class="app-grade">Grado 7-01</span>
+      <span class="app-desc">Descubre cuánta energía consumen los aparatos de tu hogar y qué pasa cuando sobrecargas el breaker.</span>
+    </div>
+  </header>
+
+  <div class="calc-container">
+
+    <div class="metrics-panel">
+      <div class="metric-card">
+        <span class="metric-label">Potencia instantánea</span>
+        <p class="metric-value"><span id="power-value">0</span><span class="metric-unit"> W</span></p>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Consumo mensual</span>
+        <p class="metric-value"><span id="kwh-value">0.0</span><span class="metric-unit"> kWh</span></p>
+      </div>
+      <div class="metric-card highlight">
+        <span class="metric-label">Factura estimada</span>
+        <p class="metric-value">$<span id="cop-value">0</span><span class="metric-unit"> COP/mes</span></p>
+      </div>
+      <div class="metric-card power-bar-card">
+        <div class="power-bar-header">
+          <span class="metric-label">Carga del breaker (límite: 1.500 W)</span>
+          <span id="power-pct" class="power-pct safe">0%</span>
+        </div>
+        <div class="power-bar">
+          <div id="power-fill" class="power-fill safe" style="width:0%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="loading" class="loading-state">Cargando aparatos...</div>
+
+    <div id="appliances-grid" class="appliances-grid"></div>
+
+  </div>
+
+  <div id="breaker-overlay" class="breaker-overlay hidden">
+    <div class="breaker-content">
+      <span class="breaker-icon">⚡</span>
+      <h2 class="breaker-title">¡SOBRECARGA!</h2>
+      <p class="breaker-msg">Tu red doméstica superó el límite seguro de 1.500 W.</p>
+      <p class="breaker-current">Potencia actual: <strong id="breaker-power-val">0 W</strong></p>
+      <p class="breaker-tip">En la vida real, el breaker se dispararía y perderías el fluido eléctrico. ¡Nunca sobrecargues tu instalación!</p>
+      <button id="reset-btn" class="breaker-reset-btn">🔧 Reiniciar el Breaker</button>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

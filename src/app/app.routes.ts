@@ -16,6 +16,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/blog/blog.component').then(m => m.BlogComponent)
   },
   {
+    path: 'lab/calculadora-de-consumo',
+    loadComponent: () => import('./pages/lab/calculadora-consumo/calculadora-consumo.component').then(m => m.CalculadoraConsumoComponent)
+  },
+  {
     path: 'projects/:slug',
     loadComponent: () => import('./pages/content-detail/content-detail.component').then(m => m.ContentDetailComponent),
     data: { type: 'project' }

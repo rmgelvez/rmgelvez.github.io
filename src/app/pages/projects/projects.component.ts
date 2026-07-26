@@ -14,7 +14,7 @@ import { I18nService } from '../../services/i18n.service';
 export class ProjectsComponent implements OnInit {
   protected i18n = inject(I18nService);
   private readonly contentService = inject(ContentService);
-  
+
   projects: ContentItem[] = [];
 
   ngOnInit(): void {
